@@ -8,6 +8,6 @@ export default (variables) => {
     .map(({ variable_type, key, value }) => ({
       variable_type,
       key,
-      secret_value: value,
+      secret_value: [].concat(value).join(","),
     }));
 };
