@@ -194,28 +194,15 @@ export default {
       const variable = variables.find((v) => v.key === key);
       if (variable) {
         variable.type = type;
-        variable.value = key.startsWith("M_") ? [value[0].split(":")[0]] : value[0].split(":")[0];
+        variable.value = value;
       } else {
         variables.push({
           uniqueId: uniqueId(`var-${refValue}`),
           key,
-          value: key.startsWith("M_") ? [value[0].split(":")[0]] : value[0].split(":")[0],
+          value,
           variable_type: type,
-          options: value.map(function(itemStr) {
-            const parts = itemStr.split(":");
-            return {
-              value: parts[0],
-              text: parts[parts.length - 1]
-            };
-          })
         });
       }
-    },
-    isTextVar(e) {
-      return !e.options || e.options.length == 1;
-    },
-    isSelectVar(e) {
-      return e.options && e.options.length > 1;
     },
     setVariableType(key, type) {
       const { variables } = this.form[this.refFullName];
@@ -296,7 +283,7 @@ export default {
 
           Object.entries(data).forEach(([key, { value, description }]) => {
             if (description) {
-              params[key] = value.split(",");
+              params[key] = value;
               descriptions[key] = description;
             }
           });
@@ -443,7 +430,6 @@ export default {
             @change="addEmptyVariable(refFullName)"
           />
           <gl-form-textarea
-            v-if="isTextVar(variable)"
             v-model="variable.value"
             :placeholder="s__('CiVariables|Input variable value')"
             class="gl-mb-3"
@@ -451,14 +437,6 @@ export default {
             :no-resize="false"
             data-testid="pipeline-form-ci-variable-value"
             data-qa-selector="ci_variable_value_field"
-          />
-          <gl-form-select
-            v-else
-            v-model="variable.value"
-            :class="$options.formElementClasses"
-            :style="{ overflowY: variable.key.startsWith('M_') ? 'scroll' : 'hidden' }"
-            :options="variable.options"
-            :multiple="variable.key.startsWith('M_')"
           />
 
           <template v-if="variables.length > 1">
