@@ -1,0 +1,128 @@
+---
+type: reference, dev
+stage: none
+group: Development
+info: To determine the technical writer assigned to the Stage/Group associated with this page, see https://about.gitlab.com/handbook/product/ux/technical-writing/#assignments
+---
+
+# Contribute to GitLab
+
+Thank you for your interest in contributing to GitLab. This guide details how
+to contribute to the development of GitLab in a way that is easy for everyone.
+
+For a first-time step-by-step guide to the contribution process for development, see [Tutorial: Make a GitLab contribution](first_contribution.md).
+
+For other ways to contribute see our [Contributing to GitLab](https://about.gitlab.com/community/contribute/) page.
+
+Looking for something to work on? See the
+[How to contribute](#how-to-contribute) section for more information.
+
+GitLab comes in two flavors:
+
+- GitLab Community Edition (CE), our free and open source edition.
+- GitLab Enterprise Edition (EE), which is our commercial edition.
+
+Throughout this guide you will see references to CE and EE for abbreviation.
+
+## Code of conduct
+
+We want to create a welcoming environment for everyone who is interested in contributing.
+For more information about our commitment to an open and welcoming environment, see our [Code of Conduct page](https://about.gitlab.com/community/contribute/code-of-conduct/).
+
+Issues and merge requests should be in English and contain appropriate language
+for audiences of all ages.
+
+## How to contribute
+
+If you would like to contribute to GitLab:
+
+- Issues with the
+  [`~Seeking community contributions` label](../labels/index.md#label-for-community-contributors)
+  are a great place to start.
+- Optimizing our tests is another great opportunity to contribute. You can use
+  [RSpec profiling statistics](https://gitlab-org.gitlab.io/rspec_profiling_stats/) to identify
+  slowest tests. These tests are good candidates for improving and checking if any of
+  [best practices](../testing_guide/best_practices.md)
+  could speed them up.
+
+For a walkthrough of the contribution process, see [Tutorial: Make a GitLab contribution](first_contribution.md).
+
+### Review process
+
+When you submit code to GitLab, we really want it to get merged! However, we always review
+submissions carefully, and this takes time. Code submissions will usually be reviewed by two
+[domain experts](../code_review.md#domain-experts) before being merged:
+
+- A [reviewer](../code_review.md#the-responsibility-of-the-reviewer).
+- A [maintainer](../code_review.md#the-responsibility-of-the-maintainer).
+
+After review, the reviewer could ask the author to update the merge request. In that case, the reviewer would set the `~"workflow::in dev"` label.
+Once the merge request has been updated and set as ready for review again (for example, with `@gitlab-bot ready`), they will review the code again.
+This process may repeat any number of times before merge, to help make the contribution the best it can be.
+
+Lastly, keep the following in mind when submitting merge requests:
+
+- When reviewers are reading through a merge request they may request guidance from other
+  reviewers.
+- If the code quality is found to not meet GitLab standards, the merge request reviewer will
+  provide guidance and refer the author to our:
+  - [Documentation](../documentation/styleguide/index.md) style guide.
+  - [Code style guides](style_guides.md).
+- Sometimes style guides will be followed but the code will lack structural integrity, or the
+  reviewer will have reservations about the code's overall quality. When there is a reservation,
+  the reviewer will inform the author and provide some guidance.
+- Though GitLab generally allows anyone to indicate
+  [approval](../../user/project/merge_requests/approvals/index.md) of merge requests, the
+  maintainer may require [approvals from certain reviewers](../code_review.md#approval-guidelines)
+  before merging a merge request.
+- Sometimes a maintainer may choose to close a merge request. They will fully disclose why it will not
+  be merged, as well as some guidance. The maintainers will be open to discussion about how to change
+  the code so it can be approved and merged in the future.
+
+### Getting attention on your merge request
+
+GitLab will do its best to review community contributions as quickly as possible. Specially
+appointed developers review community contributions daily. Look at the
+[team page](https://about.gitlab.com/company/team/) for the merge request coach who specializes in
+the type of code you have written and mention them in the merge request. For example, if you have
+written some front-end code, you should mention the frontend merge request coach. If
+your code has multiple disciplines, you may mention multiple merge request coaches.
+
+GitLab receives a lot of community contributions. If your code has not been reviewed within two
+working days of its initial submission, you can ask for help with `@gitlab-bot help`.
+
+#### Issues workflow
+
+This [documentation](issue_workflow.md) outlines the current issue workflow:
+
+- [Issue triaging](issue_workflow.md#issue-triaging)
+- [Labels](../labels/index.md)
+- [Feature proposals](issue_workflow.md#feature-proposals)
+- [Issue weight](issue_workflow.md#issue-weight)
+- [Regression issues](issue_workflow.md#regression-issues)
+- [Technical and UX debt](../labels/index.md#technical-and-ux-debt)
+- [Technical debt in follow-up issues](issue_workflow.md#technical-debt-in-follow-up-issues)
+
+### Merge requests workflow
+
+This [documentation](merge_request_workflow.md) outlines the current merge request process.
+
+- [Merge request guidelines](merge_request_workflow.md#merge-request-guidelines-for-contributors)
+- [Contribution acceptance criteria](merge_request_workflow.md#contribution-acceptance-criteria)
+- [Definition of done](merge_request_workflow.md#definition-of-done)
+- [Dependencies](merge_request_workflow.md#dependencies)
+
+## Closing policy for issues and merge requests
+
+- For the criteria for closing issues, see [the Issue Triage handbook page](https://about.gitlab.com/handbook/engineering/quality/issue-triage/#outdated-issues).
+- For the criteria for closing merge requests, see [the Merge Request Workflow](merge_request_workflow.md).
+
+## Getting an Enterprise Edition License
+
+If you need a license for contributing to an EE-feature, see
+[relevant information](https://about.gitlab.com/handbook/marketing/community-relations/contributor-success/community-contributors-workflows.html#contributing-to-the-gitlab-enterprise-edition-ee).
+
+## Finding help
+
+- [Get help](https://about.gitlab.com/get-help/).
+- Join the community-run [Discord server](https://discord.gg/gitlab) and find other contributors in the `#contribute` channel.
