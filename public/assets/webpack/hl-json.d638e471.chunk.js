@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[297],{hUpk:function(n,e){n.exports=function(n){const e={beginKeywords:["true","false","null"].join(" ")};return{name:"JSON",contains:[{className:"attr",begin:/"(\\.|[^\\"\r\n])*"(?=\s*:)/,relevance:1.01},{match:/[{}[\],:]/,className:"punctuation",relevance:0},n.QUOTE_STRING_MODE,e,n.C_NUMBER_MODE,n.C_LINE_COMMENT_MODE,n.C_BLOCK_COMMENT_MODE],illegal:"\\S"}}}}]);
+//# sourceMappingURL=hl-json.d638e471.chunk.js.map

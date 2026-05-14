@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/groups/labels/index/index.js"],"names":["initLabels","initDeleteLabelModal"],"mappings":"2FAAA,uBAEAA,cACAC,e","file":"pages.groups.labels.index.d05212dc.chunk.js","sourcesContent":["import { initDeleteLabelModal, initLabels } from '~/labels';\n\ninitLabels();\ninitDeleteLabelModal();\n"],"sourceRoot":""}

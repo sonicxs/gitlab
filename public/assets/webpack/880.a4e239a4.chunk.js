@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[880],{"9Vz2":function(e,t,n){"use strict";n.r(t),n.d(t,"CiSchemaExtension",(function(){return c}));var i=n.p+"ci.69184461.json",s=n("ZyD4");class c{static get extensionName(){return"CiSchema"}provides(){return{registerCiSchema:function(e){const t=new URL(i,gon.gitlab_url).href,n=e.getModel().uri.path.split("/").pop();Object(s.j)({uri:t,fileMatch:[n]},{customTags:["!reference sequence"]})}}}}}}]);
+//# sourceMappingURL=880.a4e239a4.chunk.js.map

@@ -1,0 +1,218 @@
+{
+  "name": "gitlab-web-ide",
+  "version": "0.0.2",
+  "main": "./main.js",
+  "browser": "./main.js",
+  "displayName": "GitLab Web IDE Extension",
+  "description": "",
+  "icon": "assets/images/gitlab_logo.svg",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onFileSystem:gitlab-web-ide"],
+  "enabledApiProposals": [
+    "codiconDecoration",
+    "fileSearchProvider",
+    "resolvers",
+    "scmActionButton"
+  ],
+  "isBuiltin": true,
+  "publisher": "gitlab",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitlab-web-ide.commit",
+        "title": "Commit",
+        "category": "GitLab Web IDE",
+        "icon": "$(check)"
+      },
+      {
+        "command": "gitlab-web-ide.compare-with-mr-base",
+        "title": "Compare with merge request base",
+        "category": "GitLab Web IDE",
+        "icon": "$(git-pull-request)"
+      },
+      {
+        "command": "gitlab-web-ide.start-remote",
+        "title": "Configure a remote connection",
+        "category": "GitLab Web IDE"
+      },
+      {
+        "command": "gitlab-web-ide.checkout-branch",
+        "title": "Checkout a branch",
+        "category": "GitLab Web IDE"
+      },
+      {
+        "command": "gitlab-web-ide.go-to-gitlab",
+        "title": "Go to GitLab",
+        "category": "GitLab Web IDE"
+      },
+      {
+        "command": "gitlab-web-ide.go-to-project",
+        "title": "Go to your open project on GitLab",
+        "category": "GitLab Web IDE"
+      },
+      {
+        "command": "gitlab-web-ide.share-your-feedback",
+        "title": "Share your feedback",
+        "category": "GitLab Web IDE"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "gitlab-web-ide.compare-with-mr-base",
+          "when": "!explorerResourceIsFolder && resourcePath in gitlab-web-ide.mergeRequestFilePaths",
+          "group": "3_compare"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "gitlab-web-ide.compare-with-mr-base",
+          "when": "!isInDiffEditor && resourcePath in gitlab-web-ide.mergeRequestFilePaths",
+          "group": "navigation"
+        }
+      ],
+      "scm/title": [
+        {
+          "command": "gitlab-web-ide.commit",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "gitlab-web-ide.compare-with-mr-base",
+          "group": "navigation",
+          "when": "resourcePath in gitlab-web-ide.mergeRequestFilePaths"
+        },
+        {
+          "command": "gitlab-web-ide.go-to-project",
+          "when": "gitlab-web-ide.is-ready"
+        },
+        {
+          "command": "gitlab-web-ide.go-to-gitlab",
+          "when": "gitlab-web-ide.is-ready"
+        },
+        {
+          "command": "gitlab-web-ide.commit",
+          "when": "gitlab-web-ide.is-ready"
+        },
+        {
+          "command": "gitlab-web-ide.checkout-branch",
+          "when": "gitlab-web-ide.is-ready"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "terminal",
+        "contents": "The terminal requires a runtime environment capable of executing code. For more information, see [Remote Development](https://docs.gitlab.com/ee/user/project/remote_development/).\n\n[Configure a remote connection](command:gitlab-web-ide.start-remote)\n\n"
+      },
+      {
+        "view": "workbench.views.extensions.installed",
+        "contents": "The extension marketplace has been disabled as we work towards a loveable experience.\n\nStay tuned!"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "getStartedWebIde",
+        "title": "Get started with the new GitLab Web IDE",
+        "description": "New Web IDE beta is available to everyone by default because we think you will love it 🎉",
+        "steps": [
+          {
+            "id": "tryItOut",
+            "title": "Give the new Web IDE a spin",
+            "description": "Don't worry, you can always switch back to the legacy Web IDE in your [user preferences](command:gitlab-web-ide.mediator.open-uri?%5B%7B%22key%22%3A%22userPreferences%22%7D%5D). The legacy Web IDE will be available until the new Web IDE is out of beta.",
+            "media": {
+              "svg": "assets/images/step1.svg",
+              "altText": "Schematic image of Web Editor"
+            }
+          },
+          {
+            "id": "remoteEnvironment",
+            "title": "Connect to a remote development environment",
+            "description": "Realize the full potential of a web-based editor by connecting to a remote host and interacting with a live terminal right in the Web IDE. [Our documentation](https://docs.gitlab.com/ee/user/project/remote_development/) walks you through how to configure your environment and host it in a cloud provider of your choice. Once you have an environment running it's three easy steps to connect it to the Web IDE.",
+            "media": {
+              "svg": "assets/images/step2.svg",
+              "altText": "Schematic image of Web Editor connecting server"
+            }
+          },
+          {
+            "id": "roadmap",
+            "title": "What's next for the Web IDE?",
+            "description": "GitLab Workflow and third-party extensions. Personalization and customization. Search improvements. Check out our [roadmap epic](https://gitlab.com/groups/gitlab-org/-/epics/7683) for more details about what we're working on during the beta phase of the Web IDE.",
+            "media": {
+              "svg": "assets/images/step3.svg",
+              "altText": "Schematic image of the roadmap"
+            }
+          },
+          {
+            "id": "feedback",
+            "title": "Let us know what you think",
+            "description": "We want to hear about your experience with the new Web IDE. Let us know how things are working, or not, in the [feedback issue](https://gitlab.com/gitlab-org/gitlab/-/issues/385787).",
+            "media": { "svg": "assets/images/step4.svg", "altText": "Feedback image" }
+          }
+        ]
+      }
+    ],
+    "colors": [
+      {
+        "id": "webIde.addedResourceForeground",
+        "description": "Color for added resources.",
+        "defaults": {
+          "light": "#587c0c",
+          "dark": "#81b88b",
+          "highContrast": "#a1e3ad",
+          "highContrastLight": "#374e06"
+        }
+      },
+      {
+        "id": "webIde.modifiedResourceForeground",
+        "description": "Color for modified resources.",
+        "defaults": {
+          "light": "#895503",
+          "dark": "#E2C08D",
+          "highContrast": "#E2C08D",
+          "highContrastLight": "#895503"
+        }
+      },
+      {
+        "id": "webIde.deletedResourceForeground",
+        "description": "Color for deleted resources.",
+        "defaults": {
+          "light": "#ad0707",
+          "dark": "#c74e39",
+          "highContrast": "#c74e39",
+          "highContrastLight": "#ad0707"
+        }
+      }
+    ],
+    "icons": {
+      "gitlab-tanuki": {
+        "description": "GitLab Mono Tanuki",
+        "default": {
+          "fontPath": "assets/fonts/gitlab_webide.woff",
+          "fontCharacter": "\\eA01"
+        }
+      }
+    },
+    "themes": [
+      {
+        "label": "GitLab Dark Grey",
+        "uiTheme": "vs-dark",
+        "path": "./assets/themes/GitLab_Dark_Grey-color-theme.json"
+      },
+      {
+        "label": "GitLab Dark",
+        "uiTheme": "vs-dark",
+        "path": "./assets/themes/GitLab_Dark-color-theme.json"
+      },
+      {
+        "label": "GitLab Light",
+        "uiTheme": "vs",
+        "path": "./assets/themes/GitLab_Light-color-theme.json"
+      }
+    ]
+  }
+}

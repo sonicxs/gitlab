@@ -1,0 +1,29 @@
+{
+  "name": "ai-assisted-code-suggestions",
+  "version": "0.0.1",
+  "main": "./main.js",
+  "browser": "./main.js",
+  "displayName": "AI Assisted Code Suggestions (Alpha)",
+  "description": "Code completions within the GitLab WebIDE as you type",
+  "icon": "assets/images/gitlab_logo.svg",
+  "engines": {
+    "vscode": "^1.75.1"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished", "onFileSystem:gitlab-web-ide"],
+  "isBuiltin": true,
+  "publisher": "gitlab",
+  "contributes": {
+    "commands": [],
+    "configuration": {
+      "title": "GitLab Workflow (GitLab VSCode Extension)",
+      "properties": {
+        "gitlab.aiAssistedCodeSuggestions.enabled": {
+          "description": "Enable code completion (Beta)",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  }
+}

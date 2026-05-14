@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./vue_shared/components/empty_component.js"],"names":["render"],"mappings":"uFAAA,OAAe,WACbA,OAAQ,kBAAM","file":"6.8506f65a.chunk.js","sourcesContent":["export default {\n  render: () => null,\n};\n"],"sourceRoot":""}

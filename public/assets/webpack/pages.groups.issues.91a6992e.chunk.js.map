@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/groups/issues/index.js"],"names":["mountIssuesListApp"],"mappings":"2IAAA,uBAEAA,gB","file":"pages.groups.issues.91a6992e.chunk.js","sourcesContent":["import { mountIssuesListApp } from '~/issues/list';\n\nmountIssuesListApp();\n"],"sourceRoot":""}

@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[542],{127:function(s,e,n){n("uGLJ"),s.exports=n("g/xf")},"g/xf":function(s,e){function n(s){window.opener.postMessage(s,function(){const s=new URL(window.opener.location);return s.hash="",s.search="",s}().toString())}!function(){const s=new URLSearchParams(window.location.search);s.has("code")&&s.has("state")?n({success:!0,code:s.get("code"),state:s.get("state")}):n({success:!1}),window.close()}()}},[[127,1,0]]]);
+//# sourceMappingURL=pages.jira_connect.oauth_callbacks.3fb3fdca.chunk.js.map

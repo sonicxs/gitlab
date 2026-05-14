@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/import/manifest/new/index.js"],"names":["initNewProjectUrlSelect"],"mappings":"4IAAA,uBAEAA,gB","file":"pages.import.manifest.new.d7151d9e.chunk.js","sourcesContent":["import { initNewProjectUrlSelect } from '~/projects/new';\n\ninitNewProjectUrlSelect();\n"],"sourceRoot":""}
