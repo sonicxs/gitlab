@@ -59,11 +59,6 @@ eslint-report.html
 /log/*.log*
 /node_modules
 /nohup.out
-/public/assets/
-/public/uploads.*
-/public/uploads/
-/public/sitemap.xml
-/public/sitemap.xml.gz
 /shared/artifacts/
 /spec/examples.txt
 /rails_best_practices_output.html
