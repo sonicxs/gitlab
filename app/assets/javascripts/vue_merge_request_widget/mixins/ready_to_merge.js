@@ -5,6 +5,11 @@ export const MERGE_DISABLED_TEXT = __('You can only merge once the items above a
 export const MERGE_DISABLED_SKIPPED_PIPELINE_TEXT = __(
   "Merge blocked: pipeline must succeed. It's waiting for a manual job to continue.",
 );
+
+export const MERGE_DISABLED_TEXT_UNAPPROVED = __(
+  'You can only merge once this merge request is approved by all reviewers.',
+);
+
 export const PIPELINE_MUST_SUCCEED_CONFLICT_TEXT = __(
   'A CI/CD pipeline must run and be successful before merge.',
 );
@@ -12,16 +17,23 @@ export const PIPELINE_SKIPPED_STATUS = 'SKIPPED';
 
 export default {
   computed: {
+    isApprovalNeeded() {
+      return !this.mr.isApproved;
+    },
     isMergeButtonDisabled() {
       const { commitMessage } = this;
       return Boolean(
         !commitMessage.length ||
           !this.shouldShowMergeControls ||
           this.isMakingRequest ||
+	  this.isApprovalNeeded ||
           this.mr.preventMerge,
       );
     },
     mergeDisabledText() {
+      if (this.isApprovalNeeded) {
+        return MERGE_DISABLED_TEXT_UNAPPROVED;
+      }
       if (this.pipeline?.status === PIPELINE_SKIPPED_STATUS) {
         return MERGE_DISABLED_SKIPPED_PIPELINE_TEXT;
       }

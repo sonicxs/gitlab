@@ -193,6 +193,9 @@ export default {
       return this.status === PIPELINE_FAILED_STATE && this.isPipelineFailed;
     },
     isMergeAllowed() {
+      if (!this.mr.isApproved) {
+        return false;
+      }
       return this.state.mergeable || false;
     },
     canRemoveSourceBranch() {
