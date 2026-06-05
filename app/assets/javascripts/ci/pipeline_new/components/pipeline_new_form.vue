@@ -8,6 +8,7 @@ import {
   GlForm,
   GlFormGroup,
   GlFormInput,
+  GlFormSelect,
   GlFormTextarea,
   GlLink,
   GlSprintf,
@@ -68,6 +69,7 @@ export default {
     GlForm,
     GlFormGroup,
     GlFormInput,
+    GlFormSelect,
     GlFormTextarea,
     GlLink,
     GlSprintf,
@@ -289,17 +291,24 @@ export default {
     setVariable(refValue, type, key, value) {
       const { variables } = this.form[refValue];
 
+      let initValue = value;
+      if (typeof value === 'string' && value.includes(':')) {
+        initValue = value.split(':')[0]; // 剥离掉可能存在的默认值中文
+      }
+
       const variable = variables.find((v) => v.key === key);
       if (variable) {
         variable.type = type;
-        variable.value = value;
+        variable.value = key.startsWith("M_") ? (Array.isArray(initValue) ? initValue : [initValue]) : initValue;
+        console.log(`[Debug] 触发修改变量 -> key: ${key}, variable.value:`, variable.value);
       } else {
         variables.push({
           uniqueId: uniqueId(`var-${refValue}`),
           key,
-          value,
+          value : key.startsWith("M_") ? (Array.isArray(initValue) ? initValue : [initValue]) : initValue,
           variable_type: type,
         });
+        console.log(`[Debug] 新增变量成功 -> variables最终值:`, variables);
       }
     },
     setVariableAttribute(key, attribute, value) {
@@ -325,6 +334,14 @@ export default {
       this.submitted = true;
       this.ccAlertDismissed = false;
 
+      // 1. 在提交前，深拷贝一份现有的变量数据，防止修改影响前端 UI 显示
+      const submittedVariables = this.variables.map((v) => {
+        if (v.key.startsWith('M_') && Array.isArray(v.value)) {
+          return { ...v, value: v.value.join(',') };
+        }
+        return v;
+      });
+
       const { data } = await this.$apollo.mutate({
         mutation: createPipelineMutation,
         variables: {
@@ -332,7 +349,7 @@ export default {
           // send shortName as fall back for query params
           // https://gitlab.com/gitlab-org/gitlab/-/issues/287815
           ref: this.refQueryParam,
-          variablesAttributes: filterVariables(this.variables),
+          variablesAttributes: filterVariables(submittedVariables),
         },
       });
 
@@ -368,6 +385,22 @@ export default {
     dismissError() {
       this.ccAlertDismissed = true;
       this.error = null;
+    },
+    getDropdownLabel(key, currentValue) {
+      // 如果没有值，返回空提示
+      if (!currentValue) return '';
+
+      const options = this.configVariablesWithDescription.options[key];
+      if (options && options.length > 0) {
+        // 去原始的选项数组（如 ["nothing:不检测", "all:全检测"]）里匹配
+        const matchedOption = options.find((option) => option.split(':')[0] === currentValue);
+        if (matchedOption && matchedOption.includes(':')) {
+          return matchedOption.split(':')[1]; // 找到了就返回中文别名
+        }
+      }
+
+      // 如果没带冒号或者没匹配到，直接展示原值
+      return currentValue;
     },
   },
 };
@@ -461,24 +494,40 @@ export default {
             data-qa-selector="ci_variable_key_field"
             @change="addEmptyVariable(refFullName)"
           />
-          <gl-dropdown
-            v-if="shouldShowValuesDropdown(variable.key)"
-            :text="variable.value"
-            :class="$options.formElementClasses"
-            class="gl-flex-grow-1 gl-mr-0!"
-            data-testid="pipeline-form-ci-variable-value-dropdown"
-            data-qa-selector="ci_variable_value_dropdown"
-          >
-            <gl-dropdown-item
-              v-for="option in configVariablesWithDescription.options[variable.key]"
-              :key="option"
-              data-testid="pipeline-form-ci-variable-value-dropdown-items"
-              data-qa-selector="ci_variable_value_dropdown_item"
-              @click="setVariableAttribute(variable.key, 'value', option)"
+          <template v-if="shouldShowValuesDropdown(variable.key)">
+            <gl-form-select
+              v-if="variable.key.startsWith('M_')"
+              v-model="variable.value"
+              :class="$options.formElementClasses"
+              :style="{ overflowY: 'scroll' }"
+              :options="configVariablesWithDescription.options[variable.key].map(item => {
+                const parts = item.split(':');
+                return {
+                  value: parts[0],                // 传给 v-model 的实际值，例如 'ios_china'
+                  text: parts[1] || parts[0]      // 界面上显示给用户看的文本，例如 '国内iOS'
+                };
+              })"
+              :multiple="variable.key.startsWith('M_')"
+            />
+            <gl-dropdown
+              v-else
+              :text="getDropdownLabel(variable.key, variable.value)"
+              :class="$options.formElementClasses"
+              class="gl-flex-grow-1 gl-mr-0!"
+              data-testid="pipeline-form-ci-variable-value-dropdown"
+              data-qa-selector="ci_variable_value_dropdown"
             >
-              {{ option }}
-            </gl-dropdown-item>
-          </gl-dropdown>
+              <gl-dropdown-item
+                v-for="option in configVariablesWithDescription.options[variable.key]"
+                :key="option"
+                data-testid="pipeline-form-ci-variable-value-dropdown-items"
+                data-qa-selector="ci_variable_value_dropdown_item"
+                @click="setVariableAttribute(variable.key, 'value', option.split(':')[0])"
+              >
+                {{ option.includes(':') ? option.split(':')[1] : option }}
+              </gl-dropdown-item>
+            </gl-dropdown>
+          </template>
           <gl-form-textarea
             v-else
             v-model="variable.value"
