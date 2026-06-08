@@ -305,6 +305,14 @@ class ProjectPolicy < BasePolicy
     enable :read_release
     enable :read_analytics
     enable :read_insights
+    enable :read_build
+    enable :create_build
+    enable :update_build
+    enable :read_pipeline
+    enable :read_pipeline_schedule
+    enable :create_pipeline_schedule
+    enable :create_pipeline
+    enable :update_pipeline
   end
 
   rule { can?(:reporter_access) & can?(:create_issue) }.enable :create_incident
@@ -338,11 +346,16 @@ class ProjectPolicy < BasePolicy
     enable :admin_issue_link
     enable :read_commit_status
     enable :read_build
+    enable :create_build
+    enable :update_build
     enable :read_container_image
     enable :read_harbor_registry
     enable :read_deploy_board
     enable :read_pipeline
     enable :read_pipeline_schedule
+    enable :create_pipeline_schedule
+    enable :create_pipeline
+    enable :update_pipeline
     enable :read_environment
     enable :read_deployment
     enable :read_merge_request
@@ -352,10 +365,12 @@ class ProjectPolicy < BasePolicy
     enable :metrics_dashboard
     enable :read_confidential_issues
     enable :read_package
+    enable :create_package
     enable :read_ci_cd_analytics
     enable :read_external_emails
     enable :read_grafana
     enable :export_work_items
+    enable :admin_tag
   end
 
   # We define `:public_user_access` separately because there are cases in gitlab-ee
@@ -942,7 +957,20 @@ class ProjectPolicy < BasePolicy
     return ::Gitlab::Access::REPORTER if support_bot? && service_desk_enabled?
 
     # NOTE: max_member_access has its own cache
-    project.team.max_member_access(@user.id)
+    access_level = project.team.max_member_access(@user.id)
+    if access_level == ::Gitlab::Access::GUEST
+      # 条件 A：明确是通过流水线 Token ?.来的机器行为（拦截 API 层 Project 鉴权）
+      is_job_token_request = @user.respond_to?(:from_ci_job_token?) && @user.from_ci_job_token?
+
+      # 条件 B：当前的判定主体?.?接是某一个具体的 Job/Build（拦截运行时的级联依赖鉴权）
+      is_build_subject_request = @subject.is_a?(::Ci::Build)
+
+      # 只要满足其一，且判定发生时不是“真人纯网页端浏览项?.?”，就安全放行
+      if is_job_token_request || is_build_subject_request
+        return ::Gitlab::Access::REPORTER
+      end
+    end
+    access_level
   end
 
   def access_allowed_to?(feature)
