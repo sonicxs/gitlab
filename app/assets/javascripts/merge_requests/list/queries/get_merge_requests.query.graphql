@@ -1,0 +1,35 @@
+#import "~/graphql_shared/fragments/page_info.fragment.graphql"
+#import "./merge_request.fragment.graphql"
+
+query getMergeRequests(
+  $hideUsers: Boolean = false
+  $isSignedIn: Boolean = false
+  $fullPath: ID!
+  $sort: MergeRequestSort
+  $state: MergeRequestState
+  $authorUsername: String
+  $beforeCursor: String
+  $afterCursor: String
+  $firstPageSize: Int
+  $lastPageSize: Int
+) {
+  project(fullPath: $fullPath) {
+    id
+    mergeRequests(
+      sort: $sort
+      state: $state
+      authorUsername: $authorUsername
+      before: $beforeCursor
+      after: $afterCursor
+      first: $firstPageSize
+      last: $lastPageSize
+    ) {
+      pageInfo {
+        ...PageInfo
+      }
+      nodes {
+        ...MergeRequestFragment
+      }
+    }
+  }
+}
