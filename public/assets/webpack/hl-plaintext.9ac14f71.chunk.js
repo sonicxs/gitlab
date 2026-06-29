@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[368],{INpA:function(t,e){t.exports=function(t){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}}}]);
+//# sourceMappingURL=hl-plaintext.9ac14f71.chunk.js.map

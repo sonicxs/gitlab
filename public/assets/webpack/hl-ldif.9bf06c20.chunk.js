@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[332],{"9Qiz":function(a,t){a.exports=function(a){return{name:"LDIF",contains:[{className:"attribute",match:"^dn(?=:)",relevance:10},{className:"attribute",match:"^\\w+(?=:)"},{className:"literal",match:"^-"},a.HASH_COMMENT_MODE]}}}}]);
+//# sourceMappingURL=hl-ldif.9bf06c20.chunk.js.map

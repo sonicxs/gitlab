@@ -1,0 +1,2 @@
+self.webpackChunk([29],{"+962":function(e,n){e.exports=function(e){return{name:"Clojure REPL",contains:[{className:"meta.prompt",begin:/^([\w.-]+|\s*#_)?=>/,starts:{end:/$/,subLanguage:"clojure"}}]}}}});
+//# sourceMappingURL=hl-clojure-repl.187cfe2f.chunk.worker.js.map

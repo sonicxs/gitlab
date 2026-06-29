@@ -1,0 +1,2 @@
+self.webpackChunk([142],{NUM8:function(n,a){n.exports=function(n){return{aliases:["pycon"],contains:[{className:"meta.prompt",starts:{end:/ |$/,starts:{end:"$",subLanguage:"python"}},variants:[{begin:/^>>>(?=[ ]|$)/},{begin:/^\.\.\.(?=[ ]|$)/}]}]}}}});
+//# sourceMappingURL=hl-python-repl.fcb07639.chunk.worker.js.map

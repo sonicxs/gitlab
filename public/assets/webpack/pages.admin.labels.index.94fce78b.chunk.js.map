@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/admin/labels/index/index.js"],"names":["initAdminLabels"],"mappings":"2FAAA,uBAEAA,e","file":"pages.admin.labels.index.94fce78b.chunk.js","sourcesContent":["import { initAdminLabels } from '~/labels';\n\ninitAdminLabels();\n"],"sourceRoot":""}

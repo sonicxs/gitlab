@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[485],{"1Rzu":function(s,t,o){"use strict";o.r(t);var c=o("feg8");Object(c.a)()},38:function(s,t,o){o("HVBj"),o("iooJ"),s.exports=o("1Rzu")}},[[38,1,0,6,65]]]);
+//# sourceMappingURL=pages.admin.labels.index.94fce78b.chunk.js.map

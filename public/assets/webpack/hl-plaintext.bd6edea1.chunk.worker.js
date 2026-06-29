@@ -1,0 +1,2 @@
+self.webpackChunk([131],{INpA:function(t,e){t.exports=function(t){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}}});
+//# sourceMappingURL=hl-plaintext.bd6edea1.chunk.worker.js.map

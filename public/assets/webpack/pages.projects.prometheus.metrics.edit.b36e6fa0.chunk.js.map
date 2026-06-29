@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/prometheus/metrics/edit/index.js"],"names":["CustomMetrics"],"mappings":"2FAAA,uBAEAA,e","file":"pages.projects.prometheus.metrics.edit.b36e6fa0.chunk.js","sourcesContent":["import CustomMetrics from '~/custom_metrics';\n\nCustomMetrics();\n"],"sourceRoot":""}

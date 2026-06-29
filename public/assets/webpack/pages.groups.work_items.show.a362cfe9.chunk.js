@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[563],{116:function(p,s,n){n("HVBj"),n("Tuqb"),p.exports=n("Xnro")},Xnro:function(p,s,n){"use strict";n.r(s);var o=n("AxUD"),t=n("CmgX");Object(t.a)({workspaceType:o.p})}},[[116,1,0,2,3,5,8,10,19,20,57,172,173]]]);
+//# sourceMappingURL=pages.groups.work_items.show.a362cfe9.chunk.js.map

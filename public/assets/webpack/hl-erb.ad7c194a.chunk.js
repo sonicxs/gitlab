@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[296],{daiH:function(n,e){n.exports=function(n){return{name:"ERB",subLanguage:"xml",contains:[n.COMMENT("<%#","%>"),{begin:"<%[%=-]?",end:"[%-]?%>",subLanguage:"ruby",excludeBegin:!0,excludeEnd:!0}]}}}}]);
+//# sourceMappingURL=hl-erb.ad7c194a.chunk.js.map

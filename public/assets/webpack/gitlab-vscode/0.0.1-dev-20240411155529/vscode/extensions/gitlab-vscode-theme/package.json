@@ -1,0 +1,44 @@
+{
+  "name": "gitlab-vscode-theme",
+  "displayName": "GitLab Color Themes",
+  "description": "GitLab's color theme for the Visual Studio Code editor",
+  "version": "0.0.1",
+  "publisher": "GitLab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/gitlab-org/gitlab-web-ide/-/tree/main/packages/vscode-extension-gitlab-vscode-theme"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/gitlab-org/gitlab-web-ide/-/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Themes"],
+  "keywords": ["theme", "color-theme", "gitlab", "light", "dark"],
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#171321",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "GitLab Dark Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/GitLab_Dark_Midnight-color-theme.json"
+      },
+      {
+        "label": "GitLab Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/GitLab_Dark-color-theme.json"
+      },
+      {
+        "label": "GitLab Light",
+        "uiTheme": "vs",
+        "path": "./themes/GitLab_Light-color-theme.json"
+      }
+    ]
+  }
+}

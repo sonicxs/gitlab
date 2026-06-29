@@ -1,0 +1,323 @@
+{
+  "name": "gitlab-workflow",
+  "displayName": "GitLab Workflow",
+  "description": "Official GitLab-maintained extension for Visual Studio Code.",
+  "version": "4.9.0",
+  "publisher": "GitLab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/gitlab-org/gitlab-vscode-extension"
+  },
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "git",
+    "gitlab",
+    "merge request",
+    "pipeline",
+    "ci cd",
+    "ai chat",
+    "duo chat",
+    "chat"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "bugs": {
+    "url": "https://gitlab.com/gitlab-org/gitlab-vscode-extension/-/issues",
+    "email": "incoming+gitlab-org-gitlab-vscode-extension-5261717-issue-@incoming.gitlab.com"
+  },
+  "galleryBanner": {
+    "color": "#171321",
+    "theme": "dark"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gitlab-duo",
+          "title": "GitLab Duo Chat",
+          "icon": "assets/images/light/gitlab-duo.svg"
+        }
+      ]
+    },
+    "views": {
+      "gitlab-duo": [
+        {
+          "type": "webview",
+          "id": "gl.chatView",
+          "name": "",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "gl.showOutput",
+        "title": "Show Extension Logs",
+        "category": "GitLab"
+      },
+      {
+        "command": "gl.openChat",
+        "title": "Open chat",
+        "category": "GitLab Duo Chat"
+      },
+      {
+        "command": "gl.explainSelectedCode",
+        "title": "Explain selected code",
+        "category": "GitLab Duo Chat"
+      },
+      {
+        "command": "gl.generateTests",
+        "title": "Generate Tests",
+        "category": "GitLab Duo"
+      },
+      {
+        "command": "gl.refactorCode",
+        "title": "Refactor",
+        "category": "GitLab Duo"
+      },
+      {
+        "command": "gl.newChatConversation",
+        "title": "Start a new conversation",
+        "category": "GitLab Duo Chat"
+      },
+      {
+        "command": "gl.toggleCodeSuggestions",
+        "title": "Toggle GitLab Code Suggestions",
+        "category": "Gitlab"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "gl.gitlabDuo",
+        "label": "GitLab Duo Chat"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "gl.openChat",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable"
+        },
+        {
+          "command": "gl.explainSelectedCode",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection"
+        },
+        {
+          "command": "gl.generateTests",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection"
+        },
+        {
+          "command": "gl.refactorCode",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection"
+        },
+        {
+          "command": "gl.newChatConversation",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable"
+        }
+      ],
+      "editor/context": [
+        {
+          "group": "z_commands",
+          "submenu": "gl.gitlabDuo"
+        }
+      ],
+      "gl.gitlabDuo": [
+        {
+          "command": "gl.explainSelectedCode",
+          "group": "navigation",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection"
+        },
+        {
+          "command": "gl.generateTests",
+          "group": "navigation",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection"
+        },
+        {
+          "command": "gl.refactorCode",
+          "group": "navigation",
+          "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "gl.openChat",
+        "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable",
+        "key": "alt+d"
+      },
+      {
+        "command": "gl.explainSelectedCode",
+        "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection",
+        "key": "alt+e"
+      },
+      {
+        "command": "gl.generateTests",
+        "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection",
+        "key": "alt+t"
+      },
+      {
+        "command": "gl.refactorCode",
+        "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable && editorHasSelection",
+        "key": "alt+r"
+      },
+      {
+        "command": "gl.newChatConversation",
+        "when": "config.gitlab.duoChat.enabled && gitlab:chatAvailable",
+        "key": "alt+n"
+      }
+    ],
+    "configuration": {
+      "title": "GitLab Workflow (GitLab VSCode Extension)",
+      "properties": {
+        "gitlab.debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Turning on debug mode turns on better stack trace resolution (source maps) and shows more detailed logs. Restart the extension after enabling this option."
+        },
+        "gitlab.aiAssistedCodeSuggestions.enabled": {
+          "description": "GitLab Duo Code Suggestions",
+          "type": "boolean",
+          "default": true
+        },
+        "gitlab.aiAssistedCodeSuggestions.preferredAccount": {
+          "description": "GitLab account to use for code completion",
+          "type": "string",
+          "default": null
+        },
+        "gitlab.duoChat.enabled": {
+          "description": "Enable GitLab Duo Chat assistant",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "icons": {
+      "gitlab-code-suggestions-loading": {
+        "description": "GitLab Code Suggestions Loading",
+        "default": {
+          "fontPath": "./assets/gitlab_icons.woff",
+          "fontCharacter": "\\eA01"
+        }
+      },
+      "gitlab-code-suggestions-enabled": {
+        "description": "GitLab Code Suggestions Enabled",
+        "default": {
+          "fontPath": "./assets/gitlab_icons.woff",
+          "fontCharacter": "\\eA02"
+        }
+      },
+      "gitlab-code-suggestions-disabled": {
+        "description": "GitLab Code Suggestions Disabled",
+        "default": {
+          "fontPath": "./assets/gitlab_icons.woff",
+          "fontCharacter": "\\eA03"
+        }
+      },
+      "gitlab-code-suggestions-error": {
+        "description": "GitLab Code Suggestions Error",
+        "default": {
+          "fontPath": "./assets/gitlab_icons.woff",
+          "fontCharacter": "\\eA04"
+        }
+      },
+      "gitlab-logo": {
+        "description": "GitLab",
+        "default": {
+          "fontPath": "./assets/gitlab_icons.woff",
+          "fontCharacter": "\\eA05"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "watch:desktop": "node scripts/watch_desktop.mjs",
+    "build:desktop": "node scripts/build_desktop.mjs",
+    "build:browser": "node scripts/build_browser.mjs",
+    "build:deps": "node scripts/build_deps.mjs",
+    "live:browser": "npm run build:browser && vscode-test-web --browserType=chromium --extensionDevelopmentPath=./dist-browser",
+    "package": "node scripts/package.mjs",
+    "publish": "vsce publish",
+    "clean": "node scripts/clean.mjs",
+    "lint": "eslint --report-unused-disable-directives --ext .js --ext .ts --ext .mjs . && npm run lint:prettier && npm run --prefix webviews/vue lint && npm run --prefix webviews/vue2 lint",
+    "lint:prettier": "prettier --check '**/*.{js,ts,mjs,vue,json,md}' || ( echo 'Prettier failed. Use \"npm run autofix\" to fix it.' && exit 1 )",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest",
+    "prepare:test:integration": "npm run build:desktop && cp -R node_modules dist-desktop/ && npm run build:deps && node scripts/create_test_workspace.mjs",
+    "test:integration": "npm run prepare:test:integration && node ./dist-desktop/test/runTest.js",
+    "prettier-package-json": "prettier --write package.json",
+    "prettier": "prettier --write '**/*.{js,ts,mjs,vue,json,md}'",
+    "autofix": "npm run clean && eslint --fix . && npm run prettier && cd webviews/vue && npm run lint && npm run format",
+    "update-ci-variables": "node ./scripts/update_ci_variables.js",
+    "create-test-workspace": "npm run build:desktop && node ./scripts/create_workspace_for_test_debugging.js",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postinstall": "node scripts/postinstall.mjs && npm run prettier-package-json"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^13.13.52",
+    "@types/request-promise": "^4.1.51",
+    "@types/semver": "^7.5.8",
+    "@types/sinon": "^17.0.3",
+    "@types/source-map-support": "^0.5.10",
+    "@types/temp": "^0.9.4",
+    "@types/uuid": "^9.0.8",
+    "@types/vscode": "^1.82.0",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "@vscode/test-web": "^0.0.53",
+    "conventional-changelog-cli": "^4.1.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "execa": "^8.0.1",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.12",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "mocha": "^10.4.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "msw": "^2.2.13",
+    "prettier": "^3.2.5",
+    "simple-git": "^3.24.0",
+    "sinon": "^17.0.1",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.4",
+    "vsce": "^2.15.0",
+    "vscode-test": "^1.6.1",
+    "webfont": "^11.2.26"
+  },
+  "dependencies": {
+    "@anycable/core": "^0.8.2",
+    "@gitlab-org/gitlab-lsp": "^4.3.0",
+    "@snowplow/tracker-core": "3.23.0",
+    "cross-fetch": "^4.0.0",
+    "dayjs": "^1.11.10",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "https-proxy-agent": "^7.0.4",
+    "isomorphic-ws": "^5.0.0",
+    "lodash": "^4.17.21",
+    "semver": "^7.6.0",
+    "source-map-support": "^0.5.21",
+    "temp": "^0.9.4",
+    "uuid": "^9.0.1",
+    "vscode-languageclient": "^9.0.1",
+    "ws": "^8.16.0"
+  },
+  "browser": "browser",
+  "extensionDependencies": [
+    "gitlab.gitlab-web-ide"
+  ]
+}
