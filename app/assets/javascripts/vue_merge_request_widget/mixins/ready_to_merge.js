@@ -12,12 +12,16 @@ export const PIPELINE_SKIPPED_STATUS = 'SKIPPED';
 
 export default {
   computed: {
+    isApprovalNeeded() {
+      return !this.mr.isApproved;
+    },
     isMergeButtonDisabled() {
       const { commitMessage } = this;
       return Boolean(
         !commitMessage.length ||
           !this.shouldShowMergeControls ||
           this.isMakingRequest ||
+          this.isApprovalNeeded ||
           this.mr.preventMerge,
       );
     },
