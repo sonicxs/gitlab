@@ -380,13 +380,13 @@ export default class MergeRequestStore {
     this.isApproved = this.isApproved || false;
     if (!this.hasBeenDone) {
       //initApprovals会被多次调用
-      console.log("First do. Never do again!");
-      this.setApprovedByReviewer();
       this.hasBeenDone = true;
+      console.log("First do. Never do again!");
+      this.setApprovedByReviewer(null, true);
     } else if (this.reviewersNum !== this.getReviewersIdSum()) {
       //reviewers人员有变动时（不会触发setApprovals，所以通过这里调用，会有些延迟），reviewers中的状态就是已更新的了，是可信的
       console.log("Reviewers changed!");
-      this.setApprovedByReviewer();
+      this.setApprovedByReviewer(null, true);
     }
   }
 
@@ -410,7 +410,7 @@ export default class MergeRequestStore {
     return currentIdSum;
   }
 
-  setApprovedByReviewer(approvalsData) {
+  setApprovedByReviewer(approvalsData, fromInit = false) {
     let isAllApproved = true;
     if (this.mediator) {
       const reviewers = this.mediator.store?.reviewers || [];//需要approval的人
@@ -441,14 +441,14 @@ export default class MergeRequestStore {
         });
       } else {
         //由于setApprovals方法可能延迟比较长，所以首次及reviewers变动时判断reviewers中是否全都approved了
-        // 16.11.10开始reviewer.approved中的状态不会更新，但首次进页面时的状态是准的
-        if (!this.hasBeenDone) {
+        // 16.11.10开始reviewer.approved中的状态不会更新，但首次进页面及reviewers有修改时的状态是准的
+        if (fromInit) {
           isAllApproved = reviewers.every(reviewer => {
             console.log(reviewer.username + ", f id:" + reviewer.id + ", reviewer.approved:" + reviewer.approved + ", reviewed:" + reviewer.reviewed);
             return Boolean(reviewer.approved);
           });
         } else {
-          // 如果有reviewers，但没有approvedIdsSet，说明没有人approval。如果没有reviewers，说明不需要approval
+          // 如果有reviewers，但没有approvedIdsSet，说明没有人approval。如果没有reviewers（reviewers有修改时approvalsData也为空，走这里就不准，所以走fromInit），说明不需要approval
           console.log("reviewers length:" + reviewers.length);
           if (reviewers.length > 0) {
             isAllApproved = false;
