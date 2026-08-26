@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[612],{139:function(t,e,n){n("HVBj"),t.exports=n("xVSU")},xVSU:function(t,e,n){"use strict";n.r(e);var o=n("xSbU");const s=document.getElementById("import-projects-mount-element");Object(o.a)({mountElement:s})}},[[139,1,0,40,57,71]]]);
+//# sourceMappingURL=pages.import.gitlab.status.174ac8db.chunk.js.map

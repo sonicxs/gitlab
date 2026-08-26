@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/milestones/new/index.js"],"names":["initForm"],"mappings":"sJAAA,uBAEAA,gB","file":"pages.projects.milestones.new.90d2e4bd.chunk.js","sourcesContent":["import { initForm } from '~/milestones';\n\ninitForm();\n"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/environments/terminal/index.js"],"names":["initTerminal"],"mappings":"sJAAA,uBAEAA,gB","file":"pages.projects.environments.terminal.8fc5337e.chunk.js","sourcesContent":["import initTerminal from '~/terminal/';\n\ninitTerminal();\n"],"sourceRoot":""}

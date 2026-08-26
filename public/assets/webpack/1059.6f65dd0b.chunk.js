@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[1059],{kyim:function(e,t,i){"use strict";i.r(t),i.d(t,"CiSchemaExtension",(function(){return s}));i("lFMf"),i("gOHk"),i("c9hT");var n=i.p+"ci.97c097a9.json",c=i("WXKx");class s{static get extensionName(){return"CiSchema"}provides(){return{registerCiSchema:function(e){const t=new URL(n,gon.gitlab_url).href,i=e.getModel().uri.path.split("/").pop();Object(c.i)({uri:t,fileMatch:[i]},{customTags:["!reference sequence"]})}}}}}}]);
+//# sourceMappingURL=1059.6f65dd0b.chunk.js.map

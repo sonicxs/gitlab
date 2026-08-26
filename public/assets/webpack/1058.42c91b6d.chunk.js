@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[1058],{uOOt:function(t,e,n){"use strict";n.r(e);var s=n("ewH8"),a=n("yi8e"),i=n("+MIs"),u=n("Iixh");e.default=function(t){const e=document.getElementById("js-code-navigation");if(!e)return null;s.default.use(a.b);const n=Object(u.a)();return n.dispatch("setInitialData",t),new s.default({el:e,store:n,render:t=>t(i.a)})}}}]);
+//# sourceMappingURL=1058.42c91b6d.chunk.js.map

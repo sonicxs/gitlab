@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[742],{268:function(e,o,n){n("HVBj"),n("gjpc"),e.exports=n("KmMB")},KmMB:function(e,o,n){"use strict";n.r(o);var s=n("Wsf8"),t=n("8SLn");Object(s.a)("#js-mount-new-ml-model-version",t.e,{withApolloProvider:!0,name:"NewMlModelVersion"})}},[[268,1,0,2,4,5,6,7,8,10,11,28,42,58,73]]]);
+//# sourceMappingURL=pages.projects.ml.model_versions.new.8013db5d.chunk.js.map

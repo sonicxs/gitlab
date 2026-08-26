@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([[654],{179:function(e,t,n){n("HVBj"),n("gjpc"),e.exports=n("QA9M")},QA9M:function(e,t,n){"use strict";n.r(t);var c=n("Erny"),s=n("CX32"),i=n("lqk7");Object(c.a)(s.a),Object(i.a)(),gon.features.workItemsViewPreference&&n.e(855).then(n.bind(null,"2EeE")).then((function({initWorkItemsFeedback:e}){e()})).catch({})}},[[179,1,0,2,12,27,70,62,111,170,184]]]);
+//# sourceMappingURL=pages.projects.boards.5efe4fe4.chunk.js.map
