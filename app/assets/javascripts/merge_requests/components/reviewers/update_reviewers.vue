@@ -1,5 +1,6 @@
 <script>
 import setReviewersMutation from './queries/set_reviewers.mutation.graphql';
+import getMergeRequestReviewers from '~/sidebar/queries/get_merge_request_reviewers.query.graphql';
 
 export default {
   inject: ['projectPath', 'issuableIid'],
@@ -25,6 +26,17 @@ export default {
           projectPath: this.projectPath,
           iid: this.issuableIid,
         },
+        // 新增：mutation 完成后重新拉取 reviewers 查询
+        awaitRefetchQueries: true,
+        refetchQueries: [
+          {
+            query: getMergeRequestReviewers,
+            variables: {
+              fullPath: this.projectPath,
+              iid: this.issuableIid,
+            },
+          },
+        ],
       });
 
       this.loading = false;
