@@ -5,6 +5,7 @@ import {
   GlCollapsibleListbox,
   GlFormGroup,
   GlFormInput,
+  GlFormSelect,
   GlFormTextarea,
   GlLink,
   GlLoadingIcon,
@@ -42,6 +43,7 @@ export default {
     GlCollapsibleListbox,
     GlFormGroup,
     GlFormInput,
+    GlFormSelect,
     GlFormTextarea,
     GlLink,
     GlLoadingIcon,
@@ -194,10 +196,23 @@ export default {
       }
     },
     createListItemsFromVariableOptions(key) {
-      return (this.configVariablesWithDescription?.options?.[key] || []).map((option) => ({
-        text: option,
-        value: option,
-      }));
+      const options = this.configVariablesWithDescription.options[key] || [];  
+      return options.map((option) => {
+        // 如果选项包含冒号，则进行切分（如 ["nothing:不检测", "all:全检测"]）
+        if (option && option.includes(':')) {
+          const [value, text] = option.split(':');
+          return {
+            text: text,   // 冒号后面的中文别名（如 "不检测"）
+            value: value, // 冒号前面的原始值（如 "nothing"）
+          };
+        }
+
+        // 如果没带冒号，则回退到原始逻辑，直接展示原值
+        return {
+          text: option,
+          value: option,
+        };
+      });
     },
     getPipelineAriaLabel(index) {
       return `${s__('Pipeline|Variable')} ${index + 1}`;
@@ -253,15 +268,20 @@ export default {
     setVariable(refValue, { type, key, value }) {
       const { variables } = this.form[refValue];
 
+      let initValue = value;
+      if (typeof value === 'string' && value.includes(':')) {
+        initValue = value.split(':')[0]; // 剥离掉可能存在的默认值中文
+      }
+
       const variable = variables.find((v) => v.key === key);
       if (variable) {
         variable.variableType = type;
-        variable.value = value;
+        variable.value = key.startsWith("M_") ? (Array.isArray(initValue) ? initValue : [initValue]) : initValue;
       } else {
         variables.push({
           uniqueId: uniqueId(`var-${refValue}`),
           key,
-          value,
+          value : key.startsWith("M_") ? (Array.isArray(initValue) ? initValue : [initValue]) : initValue,
           variableType: type,
         });
       }
@@ -325,15 +345,31 @@ export default {
               data-testid="pipeline-form-ci-variable-key-field"
               @change="addEmptyVariable(refParam)"
             />
-            <variable-values-listbox
-              v-if="shouldShowValuesDropdown(variable.key)"
-              :items="createListItemsFromVariableOptions(variable.key)"
-              :selected="variable.value"
-              :class="$options.formElementClasses"
-              class="!gl-mr-0 gl-grow"
-              data-testid="pipeline-form-ci-variable-value-dropdown"
-              @select="setVariableAttribute(variable.key, 'value', $event)"
-            />
+            <template v-if="shouldShowValuesDropdown(variable.key)">
+              <gl-form-select
+                v-if="variable.key.startsWith('M_')"
+                v-model="variable.value"
+                :class="$options.formElementClasses"
+                :style="{ overflowY: 'scroll' }"
+                :options="configVariablesWithDescription.options[variable.key].map(item => {
+                  const parts = item.split(':');
+                  return {
+                    value: parts[0],                // 传给 v-model 的实际值，例如 'ios_china'
+                    text: parts[1] || parts[0]      // 界面上显示给用户看的文本，例如 '国内iOS'
+                  };
+                })"
+                :multiple="variable.key.startsWith('M_')"
+              />
+              <variable-values-listbox
+                v-else
+                :items="createListItemsFromVariableOptions(variable.key)"
+                :selected="variable.value"
+                :class="$options.formElementClasses"
+                class="!gl-mr-0 gl-grow"
+                data-testid="pipeline-form-ci-variable-value-dropdown"
+                @select="setVariableAttribute(variable.key, 'value', $event)"
+              />
+            </template>
             <gl-form-textarea
               v-else
               v-model="variable.value"

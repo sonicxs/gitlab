@@ -135,6 +135,14 @@ export default {
     async createPipeline() {
       this.submitted = true;
       try {
+        // 把 M_ 开头的数组值转成逗号分隔字符串
+        const submittedVariables = this.pipelineVariables.map((v) => {
+          if (v.key.startsWith('M_') && Array.isArray(v.value)) {
+            return { ...v, value: v.value.join(',') };
+          }
+          return v;
+        });
+
         const {
           data: {
             pipelineCreate: { errors, pipeline },
@@ -145,7 +153,7 @@ export default {
             input: {
               projectPath: this.projectPath,
               ref: this.refShortName,
-              variables: this.pipelineVariables,
+              variables: submittedVariables,
               ...(this.isPipelineInputsFeatureAvailable && { inputs: this.pipelineInputs }),
             },
           },
@@ -291,3 +299,9 @@ export default {
     </div>
   </gl-form>
 </template>
+
+<style scoped>
+::v-deep .gl-form-select-wrapper select.gl-form-select {
+overflow-y: scroll !important;
+}</style>
+
