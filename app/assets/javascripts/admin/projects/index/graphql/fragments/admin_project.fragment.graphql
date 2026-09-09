@@ -1,0 +1,12 @@
+# id field is requested by ~/graphql_shared/fragments/project.fragment.graphql via ProjectInterface fragment
+# eslint-disable-next-line @graphql-eslint/require-selections
+fragment AdminProject on Project {
+  userPermissions {
+    adminAllResources
+  }
+  ... on Project {
+    statistics {
+      storageSize
+    }
+  }
+}

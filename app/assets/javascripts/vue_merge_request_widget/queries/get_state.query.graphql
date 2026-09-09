@@ -1,0 +1,19 @@
+query getState($projectPath: ID!, $iid: String!, $initialRequest: Boolean = true) {
+  project(fullPath: $projectPath) {
+    id
+    archived
+    onlyAllowMergeIfPipelineSucceeds
+    mergeRequest(iid: $iid) {
+      id
+      autoMergeEnabled
+      commitCount @include(if: $initialRequest)
+      detailedMergeStatus @include(if: $initialRequest)
+      mergeError
+      state
+      userPermissions {
+        canMerge
+      }
+      draft
+    }
+  }
+}

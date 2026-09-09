@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Package code instruction multiline to match the snapshot 1`] = `
+<div>
+  <label
+    for="instruction-input_1"
+  >
+    foo_label
+  </label>
+  <div
+    class="gl-relative"
+  >
+    <pre
+      class="gl-font-monospace"
+      data-testid="multiline-instruction"
+    >
+      this is somemultiline text
+    </pre>
+    <modal-copy-button-stub
+      category="primary"
+      class="gl-absolute gl-right-3 gl-top-3"
+      container=""
+      cssclasses=""
+      id="reference-0"
+      modalid=""
+      target=""
+      text="this is some
+multiline text"
+      title="Copy the command"
+      tooltipplacement="top"
+    />
+  </div>
+</div>
+`;

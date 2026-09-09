@@ -1,0 +1,39 @@
+---
+table_name: clusters_kubernetes_namespaces
+classes:
+- Clusters::KubernetesNamespace
+feature_categories:
+- deployment_management
+description: "(Deprecated) A Kubernetes namespace in a GitLab managed Kubernetes cluster"
+introduced_by_url: https://gitlab.com/gitlab-org/gitlab/-/commit/e3ca493876ab71ed29817a0af436fc563f564bbe
+milestone: '11.5'
+gitlab_schema: gitlab_main_org
+desired_sharding_key:
+  sharding_project_id:
+    awaiting_backfill_on_parent: true
+    references: projects
+    backfill_via:
+      parent:
+        foreign_key: cluster_id
+        table: clusters
+        sharding_key: project_id
+        belongs_to: cluster
+  group_id:
+    awaiting_backfill_on_parent: true
+    references: namespaces
+    backfill_via:
+      parent:
+        foreign_key: cluster_id
+        table: clusters
+        sharding_key: group_id
+        belongs_to: cluster
+  organization_id:
+    awaiting_backfill_on_parent: true
+    references: organizations
+    backfill_via:
+      parent:
+        foreign_key: cluster_id
+        table: clusters
+        sharding_key: organization_id
+        belongs_to: cluster
+table_size: small
