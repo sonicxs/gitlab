@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/wikis/git_access/index.js"],"names":["initClonePanel"],"mappings":"gMAAA,uBAEAA,gB","file":"pages.projects.wikis.git_access.6165be80.chunk.js","sourcesContent":["import initClonePanel from '~/clone_panel';\n\ninitClonePanel();\n"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+import{u as t}from"./flowStore-DOM2GfhM.js";import{d as n,i as s,j as a,k as r,o as i,l as c}from"./index-qSaTMYZ-.js";const d=n({__name:"Layout",setup(p){const o=t();return s(async()=>{await o.initialize()}),a(()=>{o.dispose()}),(u,_)=>{const e=c("router-view");return i(),r(e)}}});export{d as default};

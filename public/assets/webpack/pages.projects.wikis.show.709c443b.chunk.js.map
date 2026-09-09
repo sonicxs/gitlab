@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/wikis/show/index.js"],"names":["mountApplications"],"mappings":"wLAAA,uBAEAA,gB","file":"pages.projects.wikis.show.709c443b.chunk.js","sourcesContent":["import { mountApplications } from '~/wikis/show';\n\nmountApplications();\n"],"sourceRoot":""}
