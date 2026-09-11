@@ -24,7 +24,7 @@ module MergeRequests
     private
 
     def reviewer_ids
-      filter_sentinel_values(params.fetch(:reviewer_ids)).first(1)
+      filter_sentinel_values(params.fetch(:reviewer_ids))
     end
 
     def update_attrs
