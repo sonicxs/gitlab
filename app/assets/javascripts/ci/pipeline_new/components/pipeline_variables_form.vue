@@ -177,13 +177,23 @@ export default {
       }
     },
     createListItemsFromVariableOptions(key) {
-      const options = this.configVariablesWithDescription?.options?.[key] || [];
-      const uniqueOptions = [...new Set(options)];
+      const options = this.configVariablesWithDescription.options[key] || [];  
+      return options.map((option) => {
+        // 如果选项包含冒号，则进行切分（如 ["nothing:不检测", "all:全检测"]）
+        if (option && option.includes(':')) {
+          const [value, text] = option.split(':');
+          return {
+            text: text,   // 冒号后面的中文别名（如 "不检测"）
+            value: value, // 冒号前面的原始值（如 "nothing"）
+          };
+        }
 
-      return uniqueOptions.map((option) => ({
-        text: option,
-        value: option,
-      }));
+        // 如果没带冒号，则回退到原始逻辑，直接展示原值
+        return {
+          text: option,
+          value: option,
+        };
+      });
     },
     getPipelineAriaLabel(index) {
       return `${s__('Pipeline|Variable')} ${index + 1}`;
@@ -239,15 +249,20 @@ export default {
     setVariable(refValue, { type, key, value }) {
       const { variables } = this.form[refValue];
 
+      let initValue = value;
+      if (typeof value === 'string' && value.includes(':')) {
+        initValue = value.split(':')[0]; // 剥离掉可能存在的默认值中文
+      }
+
       const variable = variables.find((v) => v.key === key);
       if (variable) {
         variable.variableType = type;
-        variable.value = value;
+        variable.value = key.startsWith("M_") ? (Array.isArray(initValue) ? initValue : [initValue]) : initValue; 
       } else {
         variables.push({
           uniqueId: uniqueId(`var-${refValue}`),
           key,
-          value,
+          value : key.startsWith("M_") ? (Array.isArray(initValue) ? initValue : [initValue]) : initValue, 
           variableType: type,
         });
       }
@@ -272,6 +287,39 @@ export default {
       this.clearTimeouts();
       this.$apollo.queries.ciConfigVariables.stopPolling();
       this.populateForm();
+    },
+    getListboxSelected(variable) {
+      if (variable.key.startsWith('M_')) {
+        // 多选：期望数组
+        if (Array.isArray(variable.value)) return variable.value;
+        return variable.value ? variable.value.split(',') : [];
+      }
+      // 单选：期望单个字符串
+      return variable.value;
+    },
+    onListboxSelect(variable, selected) {
+      // 多选返回数组，单选返回单个值
+      const value = Array.isArray(selected) ? selected.join(',') : selected;
+      this.setVariableAttribute(variable.key, 'value', value);
+    },
+    getMultiToggleText(variable) {
+      const selected = Array.isArray(variable.value)
+        ? variable.value
+        : (variable.value ? variable.value.split(',') : []);
+
+      if (selected.length === 0) {
+        return '请选择'; // 或 s__('Pipeline|Select values') 等
+      }
+
+      // 把 value 映射回显示文本
+      const items = this.createListItemsFromVariableOptions(variable.key);
+      const textMap = Object.fromEntries(items.map((i) => [i.value, i.text]));
+      const names = selected.map((v) => textMap[v] || v);
+
+      if (names.length <= 3) {
+        return names.join(', ');
+      }
+      return `已选择 ${names.length} 项`; // 类似你截图1里"选择了2项"
     },
   },
 };
@@ -308,15 +356,27 @@ export default {
               data-testid="pipeline-form-ci-variable-key-field"
               @change="addEmptyVariable(refParam)"
             />
-            <variable-values-listbox
-              v-if="shouldShowValuesDropdown(variable.key)"
-              :items="createListItemsFromVariableOptions(variable.key)"
-              :selected="variable.value"
-              :class="$options.formElementClasses"
-              class="!gl-mr-0 gl-grow"
-              data-testid="pipeline-form-ci-variable-value-dropdown"
-              @select="setVariableAttribute(variable.key, 'value', $event)"
-            />
+            <template v-if="shouldShowValuesDropdown(variable.key)">
+              <gl-collapsible-listbox
+                :items="createListItemsFromVariableOptions(variable.key)"
+                :selected="getListboxSelected(variable)"
+                :toggle-text="getMultiToggleText(variable)"
+                :multiple="variable.key.startsWith('M_')"
+                block
+                :class="$options.formElementClasses"
+                class="!gl-mr-0 gl-grow"
+                @select="onListboxSelect(variable, $event)"
+              />
+              <variable-values-listbox
+                v-else
+                :items="createListItemsFromVariableOptions(variable.key)"
+                :selected="variable.value"
+                :class="$options.formElementClasses"
+                class="!gl-mr-0 gl-grow"
+                data-testid="pipeline-form-ci-variable-value-dropdown"
+                @select="setVariableAttribute(variable.key, 'value', $event)"
+              />
+            </template>
             <gl-form-textarea
               v-else
               v-model="variable.value"
