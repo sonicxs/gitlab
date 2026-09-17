@@ -475,7 +475,7 @@ export default class MergeRequestStore {
   }
 
   get isMergeAllowed() {
-    if (!this.mr.isApproved) {
+    if (!this.isApproved) {
       return false;
     }
     return Boolean(this.rawMergeable);
