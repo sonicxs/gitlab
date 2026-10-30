@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([["duo_panel"],{"27Xo":function(n,t,u){"use strict";u.r(t);u("1Ia5"),u("dvoh");var i=u("uUMX");Object(i.a)()},uUMX:function(n,t,u){"use strict";function i(){return!1}u.d(t,"a",(function(){return i}))}},[["27Xo","runtime","main"]]]);
+//# sourceMappingURL=duo_panel.475c645a.chunk.js.map

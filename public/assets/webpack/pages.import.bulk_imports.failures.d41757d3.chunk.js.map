@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/import/bulk_imports/failures/index.js"],"names":["initBulkImportDetails"],"mappings":"6KAAA,uBAEAA,gB","file":"pages.import.bulk_imports.failures.d41757d3.chunk.js","sourcesContent":["import { initBulkImportDetails } from '~/import/details';\n\ninitBulkImportDetails();\n"],"sourceRoot":""}

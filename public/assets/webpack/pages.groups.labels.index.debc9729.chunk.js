@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([["pages.groups.labels.index"],{100:function(e,a,s){s("HVBj"),e.exports=s("1wR6")},"1wR6":function(e,a,s){"use strict";s.r(a);var i=s("feg8");Object(i.d)(),Object(i.b)()}},[[100,"runtime","main","commons-pages.admin.labels.edit-pages.admin.labels.edit.vue3-pages.admin.labels.index-pages.admin.la-e04c322c","commons-pages.admin.labels.edit-pages.admin.labels.index-pages.groups.labels.edit-pages.groups.label-7a36961f"]]]);
+//# sourceMappingURL=pages.groups.labels.index.debc9729.chunk.js.map

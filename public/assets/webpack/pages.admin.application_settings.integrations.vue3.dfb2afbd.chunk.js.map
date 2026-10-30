@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/admin/application_settings/integrations/index.js"],"names":["initIntegrationsList"],"mappings":"mNAAA,uBAEAA,gB","file":"pages.admin.application_settings.integrations.vue3.dfb2afbd.chunk.js","sourcesContent":["import initIntegrationsList from '~/integrations/index';\n\ninitIntegrationsList();\n"],"sourceRoot":""}

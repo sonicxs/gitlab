@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/groups/runners/edit/index.js"],"names":["initRunnerEdit"],"mappings":"oKAAA,uBAEAA,YAAe,2B","file":"pages.groups.runners.edit.afa1c6ab.chunk.js","sourcesContent":["import { initRunnerEdit } from '~/ci/runner/runner_edit';\n\ninitRunnerEdit('#js-group-runner-edit');\n"],"sourceRoot":""}

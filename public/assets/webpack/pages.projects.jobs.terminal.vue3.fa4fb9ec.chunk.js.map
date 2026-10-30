@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/jobs/terminal/index.js"],"names":["initTerminal"],"mappings":"2HAAA,uBAEAA,e","file":"pages.projects.jobs.terminal.vue3.fa4fb9ec.chunk.js","sourcesContent":["import initTerminal from '~/terminal/';\n\ninitTerminal();\n"],"sourceRoot":""}

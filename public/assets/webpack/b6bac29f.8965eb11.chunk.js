@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([["b6bac29f"],{ku4I:function(t,s,e){"use strict";e.r(s);var r={name:"AudioViewer",props:{blob:{type:Object,required:!0}},data(){return{src:this.blob.rawPath}}},a=e("tBpV"),i=Object(a.a)(r,(function(){var t=this._self._c;return t("div",{staticClass:"gl-p-7 gl-text-center"},[t("audio",{attrs:{src:this.src,controls:"","data-testid":"audio"}})])}),[],!1,null,null,null);s.default=i.exports}}]);
+//# sourceMappingURL=b6bac29f.8965eb11.chunk.js.map

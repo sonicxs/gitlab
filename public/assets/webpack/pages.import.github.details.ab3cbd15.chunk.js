@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([["pages.import.github.details"],{147:function(i,p,s){s("HVBj"),i.exports=s("idpe")},idpe:function(i,p,s){"use strict";s.r(p);var t=s("atQM");Object(t.a)()}},[[147,"runtime","main","commons-pages.import.bulk_imports.failures-pages.import.bulk_imports.history-pages.import.bulk_impor-7470b2de","commons-pages.import.bulk_imports.failures-pages.import.github.details"]]]);
+//# sourceMappingURL=pages.import.github.details.ab3cbd15.chunk.js.map

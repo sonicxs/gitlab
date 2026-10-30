@@ -1,0 +1,2 @@
+self.webpackChunk(["hl-codeowners"],{Xbxn:function(e,n,s){"use strict";s.r(n),n.default=function(e){return{name:"codeowners",case_insensitive:!0,contains:[{scope:"number",begin:"\\[\\d+\\]",end:"(?=\\s|$)"},{scope:"regexp",begin:"^\\^|\\*"},{scope:"attr",begin:"^\\s*(?![#^*[])\\S|(?<=\\*)\\S*",end:"(?=\\s|$)",contains:[{scope:"regexp",begin:"\\*"}]},{scope:"keyword",begin:"\\[(?!\\d+\\])[^\\]]+\\]"},{scope:"variable",begin:"\\S*@.*$"},e.HASH_COMMENT_MODE]}}}});
+//# sourceMappingURL=hl-codeowners.ed6aa4ed.chunk.worker.js.map

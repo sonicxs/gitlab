@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/groups/settings/integrations/edit/index.js"],"names":["initIntegrationSettingsForm"],"mappings":"sMAAA,uBAEAA,gB","file":"pages.groups.settings.integrations.edit.aaf188b3.chunk.js","sourcesContent":["import initIntegrationSettingsForm from '~/integrations/edit';\n\ninitIntegrationSettingsForm();\n"],"sourceRoot":""}
