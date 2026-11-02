@@ -363,10 +363,21 @@ export default {
                 :class="$options.formElementClasses"
                 class="!gl-mr-0 gl-grow"
               >
+                <gl-collapsible-listbox
+                  v-if="shouldShowValuesDropdown(variable.valueOptions) && isMultiVariable(variable)"
+                  :toggle-id="`pipeline-form-ci-variable-value-${index}`"
+                  :items="createListItemsFromVariableOptions(variable)"
+                  :selected="getMultiSelected(variable)"
+                  :toggle-text="getMultiToggleText(variable)"
+                  :multiple="variable.key.startsWith('M_')"
+                  block
+                  data-testid="pipeline-form-ci-variable-value-multi-dropdown"
+                  @select="onMultiSelect(index, $event)"
+                />
                 <variable-values-listbox
-                  v-if="shouldShowValuesDropdown(variable.valueOptions)"
+                  v-else-if="shouldShowValuesDropdown(variable.valueOptions)"
                   :id="`pipeline-form-ci-variable-value-${index}`"
-                  :items="createListItemsFromVariableOptions(variable.valueOptions)"
+                  :items="createListItemsFromVariableOptions(variable)"
                   :selected="variable.value"
                   :disabled="readOnly"
                   data-testid="pipeline-form-ci-variable-value-dropdown"
