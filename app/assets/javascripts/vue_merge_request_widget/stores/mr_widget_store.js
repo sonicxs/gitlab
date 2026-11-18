@@ -141,7 +141,6 @@ export default class MergeRequestStore {
     this.mergeRequestState = data.state;
     this.isOpen = this.mergeRequestState === STATUS_OPEN;
     this.latestSHA = data.diff_head_sha;
-    this.rawMergeable = data.mergeable || false;
     this.mergeOngoing = data.merge_ongoing;
     this.allowCollaboration = data.allow_collaboration;
     this.sourceProjectId = data.source_project_id;
@@ -376,10 +375,6 @@ export default class MergeRequestStore {
   get isMergeAllowed() {
     if (!this.isApproved) {
       console.log("this.isApproved : false");
-      return false;
-    }
-    if (!Boolean(this.rawMergeable)) {
-      console.log("this.rawMergeable : false");
       return false;
     }
     return this.detailedMergeStatus === DETAILED_MERGE_STATUS.MERGEABLE;
