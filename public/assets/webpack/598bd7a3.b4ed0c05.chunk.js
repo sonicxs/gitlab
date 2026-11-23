@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([["598bd7a3"],{uOOt:function(t,n,e){"use strict";e.r(n);var s=e("hcsH"),a=e("+MIs"),c=e("Iixh");n.default=function(t){const n=document.getElementById("js-code-navigation");if(!n)return null;const e=Object(c.a)();return e.dispatch("setInitialData",t),Object(s.a)({el:n,store:e,component:a.a})}}}]);
+//# sourceMappingURL=598bd7a3.b4ed0c05.chunk.js.map

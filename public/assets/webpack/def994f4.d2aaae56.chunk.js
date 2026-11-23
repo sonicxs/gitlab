@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([["def994f4"],{wNK9:function(t,e,s){"use strict";s.r(e);var l={name:"FormatText",props:{value:{type:[String,Number],required:!0},bold:{type:Boolean,required:!1,default:!1}}},n=s("tBpV"),u=Object(n.a)(l,(function(){return(0,this._self._c)("span",{class:{"gl-font-bold":this.bold}},[this._v(this._s(this.value))])}),[],!1,null,null,null);e.default=u.exports}}]);
+//# sourceMappingURL=def994f4.d2aaae56.chunk.js.map

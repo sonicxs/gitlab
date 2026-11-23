@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/root/index.js"],"names":["initHomepage"],"mappings":"qJAAA,uBAEAA,gB","file":"pages.root.520a64e6.chunk.js","sourcesContent":["import initHomepage from '~/homepage/index';\n\ninitHomepage();\n"],"sourceRoot":""}

@@ -1,0 +1,2 @@
+(this.webpackJsonp=this.webpackJsonp||[]).push([["531a708b"],{ADDr:function(t,e,i){"use strict";i.r(e);var n={name:"MilestoneLink",components:{GlLink:i("Jx7q").a},props:{title:{type:String,required:!0},webPath:{type:String,required:!0}}},s=i("tBpV"),r=Object(s.a)(n,(function(){return(0,this._self._c)("gl-link",{attrs:{href:this.webPath,target:"_blank",variant:"meta"}},[this._v(this._s(this.title))])}),[],!1,null,null,null);e.default=r.exports}}]);
+//# sourceMappingURL=531a708b.469d1459.chunk.js.map

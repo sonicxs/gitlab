@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/admin/hooks/index.js"],"names":["initWebhookForm","initHookTestDropdowns"],"mappings":"qKAAA,uBAEAA,cACAC,gB","file":"pages.admin.hooks.36817b2b.chunk.js","sourcesContent":["import initWebhookForm, { initHookTestDropdowns } from '~/webhooks';\n\ninitWebhookForm();\ninitHookTestDropdowns();\n"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/import/bulk_imports/failures/index.js"],"names":["initBulkImportDetails"],"mappings":"iIAAA,uBAEAA,e","file":"pages.import.bulk_imports.failures.vue3.701e74d1.chunk.js","sourcesContent":["import { initBulkImportDetails } from '~/import/details';\n\ninitBulkImportDetails();\n"],"sourceRoot":""}

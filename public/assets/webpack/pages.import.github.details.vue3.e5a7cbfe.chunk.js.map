@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/import/github/details/index.js"],"names":["initImportDetails"],"mappings":"0HAAA,uBAEAA,e","file":"pages.import.github.details.vue3.e5a7cbfe.chunk.js","sourcesContent":["import initImportDetails from '~/import/details';\n\ninitImportDetails();\n"],"sourceRoot":""}

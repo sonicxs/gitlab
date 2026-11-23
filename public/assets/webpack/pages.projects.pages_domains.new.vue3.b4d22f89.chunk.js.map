@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/pages_domains/new/index.js"],"names":["initForm"],"mappings":"0LAAA,uBAEAA,gB","file":"pages.projects.pages_domains.new.vue3.b4d22f89.chunk.js","sourcesContent":["import initForm from '~/pages/projects/pages_domains/form';\n\ninitForm();\n"],"sourceRoot":""}

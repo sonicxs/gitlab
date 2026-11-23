@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./pages/projects/blob/new/index.js"],"names":["initBlobBundle"],"mappings":"iLAAA,uBAEAA,gB","file":"pages.projects.blob.new.vue3.5bd4d4d4.chunk.js","sourcesContent":["import initBlobBundle from '~/blob_edit/blob_bundle';\n\ninitBlobBundle();\n"],"sourceRoot":""}

@@ -1,0 +1,719 @@
+{
+  "duo_panel": {
+    "feature_flag": "vue3_migrate_duo_panel"
+  },
+  "pages.admin.application_settings.ci_cd": {
+    "feature_flag": "vue3_migrate_admin_ci_settings"
+  },
+  "pages.admin.application_settings.integrations": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.admin.application_settings.repository": {
+    "feature_flag": "vue3_migrate_repo_settings"
+  },
+  "pages.admin.applications": {
+    "feature_flag": "vue3_migrate_admin_applications"
+  },
+  "pages.admin.broadcast_messages.edit": {
+    "feature_flag": "vue3_migrate_broadcast_messages"
+  },
+  "pages.admin.broadcast_messages.index": {
+    "feature_flag": "vue3_migrate_broadcast_messages"
+  },
+  "pages.admin.clusters.connect": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.admin.clusters.edit": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.admin.clusters.index": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.admin.clusters.show": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.admin.deploy_keys.index": {
+    "feature_flag": "vue3_migrate_admin_deploy_keys"
+  },
+  "pages.admin.groups.edit": {
+    "feature_flag": "vue3_migrate_admin_group_project_pages"
+  },
+  "pages.admin.groups.index": {
+    "feature_flag": "vue3_migrate_admin_group_project_pages"
+  },
+  "pages.admin.groups.new": {
+    "feature_flag": "vue3_migrate_admin_group_project_pages"
+  },
+  "pages.admin.hooks": {
+    "feature_flag": "vue3_migrate_webhooks"
+  },
+  "pages.admin.integrations.edit": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.admin.integrations.overrides": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.admin.jobs.index": {
+    "feature_flag": "vue3_migrate_jobs"
+  },
+  "pages.admin.labels.edit": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.admin.labels.index": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.admin.labels.new": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.admin.organizations.integrations.edit": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.admin.organizations.integrations.index": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.admin.organizations.integrations.overrides": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.admin.organizations.settings.general": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.admin.projects.index": {
+    "feature_flag": "vue3_migrate_admin_group_project_pages"
+  },
+  "pages.admin.runners.edit": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.admin.runners.index": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.admin.runners.new": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.admin.runners.register": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.admin.runners.show": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.admin.topics": {
+    "feature_flag": "vue3_migrate_admin_group_project_pages"
+  },
+  "pages.admin.topics.edit": {
+    "feature_flag": "vue3_migrate_admin_group_project_pages"
+  },
+  "pages.admin.topics.new": {
+    "feature_flag": "vue3_migrate_admin_group_project_pages"
+  },
+  "pages.admin.usage_trends": {
+    "feature_flag": "vue3_migrate_usage_trends"
+  },
+  "pages.clusters.agents.dashboard": {
+    "feature_flag": "vue3_migrate_cluster_agents"
+  },
+  "pages.dashboard.groups.index": {
+    "feature_flag": "vue3_migrate_dashboard_explore_pages"
+  },
+  "pages.dashboard.issues": {
+    "feature_flag": "vue3_migrate_dashboard"
+  },
+  "pages.dashboard.merge_requests": {
+    "feature_flag": "vue3_migrate_dashboard_merge_requests"
+  },
+  "pages.dashboard.milestones.index": {
+    "feature_flag": "vue3_migrate_dashboard"
+  },
+  "pages.dashboard.projects": {
+    "feature_flag": "vue3_migrate_dashboard_explore_pages"
+  },
+  "pages.dashboard.search_merge_requests": {
+    "feature_flag": "vue3_migrate_dashboard_merge_requests"
+  },
+  "pages.dashboard.todos.index": {
+    "feature_flag": "vue3_migrate_dashboard"
+  },
+  "pages.dashboard.work_items": {
+    "feature_flag": "vue3_migrate_dashboard"
+  },
+  "pages.explore.analytics_dashboards": {
+    "feature_flag": "vue3_migrate_analytics_dashboards"
+  },
+  "pages.explore.catalog": {
+    "feature_flag": "vue3_migrate_ci_catalog"
+  },
+  "pages.explore.groups": {
+    "feature_flag": "vue3_migrate_dashboard_explore_pages"
+  },
+  "pages.explore.projects": {
+    "feature_flag": "vue3_migrate_dashboard_explore_pages"
+  },
+  "pages.groups.activity": {
+    "feature_flag": "vue3_migrate_group"
+  },
+  "pages.groups.boards": {
+    "feature_flag": "vue3_migrate_boards"
+  },
+  "pages.groups.clusters": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.groups.clusters.connect": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.groups.clusters.edit": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.groups.clusters.index": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.groups.clusters.show": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.groups.crm.contacts": {
+    "feature_flag": "vue3_migrate_crm"
+  },
+  "pages.groups.crm.organizations": {
+    "feature_flag": "vue3_migrate_crm"
+  },
+  "pages.groups.edit": {
+    "feature_flag": "vue3_migrate_group"
+  },
+  "pages.groups.group_members": {
+    "feature_flag": "vue3_migrate_group"
+  },
+  "pages.groups.import_histories.show": {
+    "feature_flag": "vue3_migrate_import_direct_transfer"
+  },
+  "pages.groups.labels.edit": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.groups.labels.index": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.groups.labels.new": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.groups.merge_requests": {
+    "feature_flag": "vue3_migrate_mr_list"
+  },
+  "pages.groups.milestones.edit": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.groups.milestones.index": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.groups.milestones.new": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.groups.milestones.show": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.groups.new": {
+    "feature_flag": "vue3_migrate_group"
+  },
+  "pages.groups.runners.edit": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.groups.runners.index": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.groups.runners.new": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.groups.runners.register": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.groups.runners.show": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.groups.saved_views.show": {
+    "feature_flag": "vue3_migrate_work_items"
+  },
+  "pages.groups.settings.integrations": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.groups.settings.integrations.edit": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.groups.show": {
+    "feature_flag": "vue3_migrate_group"
+  },
+  "pages.groups.work_items": {
+    "feature_flag": "vue3_migrate_work_items"
+  },
+  "pages.groups.work_items.show": {
+    "feature_flag": "vue3_migrate_work_items"
+  },
+  "pages.ide.index": {
+    "feature_flag": "vue3_migrate_web_ide"
+  },
+  "pages.ide.oauth_redirect": {
+    "feature_flag": "vue3_migrate_web_ide"
+  },
+  "pages.import.bitbucket_server.status": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.bitbucket.status": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.bulk_imports.failures": {
+    "feature_flag": "vue3_migrate_import_direct_transfer"
+  },
+  "pages.import.bulk_imports.history": {
+    "feature_flag": "vue3_migrate_import_direct_transfer"
+  },
+  "pages.import.bulk_imports.status": {
+    "feature_flag": "vue3_migrate_import_direct_transfer"
+  },
+  "pages.import.fogbugz.new_user_map": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.fogbugz.status": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.gitea.status": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.github.details": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.github.new": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.github.status": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.gitlab_projects.new": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.history": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.manifest.new": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.manifest.status": {
+    "feature_flag": "vue3_migrate_import_project_importers"
+  },
+  "pages.import.offline": {
+    "feature_flag": "vue3_migrate_import_offline_transfer"
+  },
+  "pages.import.offline.export": {
+    "feature_flag": "vue3_migrate_import_offline_transfer"
+  },
+  "pages.import.offline.export.history": {
+    "feature_flag": "vue3_migrate_import_offline_transfer"
+  },
+  "pages.import.offline.import": {
+    "feature_flag": "vue3_migrate_import_offline_transfer"
+  },
+  "pages.import.url.new": {
+    "feature_flag": "vue3_migrate_import_by_url"
+  },
+  "pages.jira_connect.branches.new": {
+    "feature_flag": "vue3_migrate_jira"
+  },
+  "pages.jira_connect.oauth_callbacks": {
+    "feature_flag": "vue3_migrate_jira"
+  },
+  "pages.organizations.groups.edit": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.groups.new": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.organizations.activity": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.organizations.groups_and_projects": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.organizations.index": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.organizations.new": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.organizations.show": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.organizations.users": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.organizations.projects.edit": {
+    "feature_flag": "vue3_migrate_organizations"
+  },
+  "pages.profiles.notifications.show": {
+    "feature_flag": "vue3_migrate_profile_time_tracking"
+  },
+  "pages.profiles.slacks": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.projects.activity": {
+    "feature_flag": "vue3_migrate_project"
+  },
+  "pages.projects.artifacts": {
+    "feature_flag": "vue3_migrate_artifacts"
+  },
+  "pages.projects.artifacts.browse": {
+    "feature_flag": "vue3_migrate_artifacts"
+  },
+  "pages.projects.artifacts.file": {
+    "feature_flag": "vue3_migrate_artifacts"
+  },
+  "pages.projects.blob.edit": {
+    "feature_flag": "vue3_migrate_blob_edit"
+  },
+  "pages.projects.blob.new": {
+    "feature_flag": "vue3_migrate_blob_edit"
+  },
+  "pages.projects.blob.show": {
+    "feature_flag": "vue3_migrate_project_overview"
+  },
+  "pages.projects.boards": {
+    "feature_flag": "vue3_migrate_boards"
+  },
+  "pages.projects.branches.index": {
+    "feature_flag": "vue3_migrate_refs_management"
+  },
+  "pages.projects.branches.new": {
+    "feature_flag": "vue3_migrate_refs_management"
+  },
+  "pages.projects.ci.lints.show": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.ci.pipeline_editor.show": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.cluster_agents.show": {
+    "feature_flag": "vue3_migrate_cluster_agents"
+  },
+  "pages.projects.clusters.connect": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.projects.clusters.edit": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.projects.clusters.index": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.projects.clusters.show": {
+    "feature_flag": "vue3_migrate_clusters"
+  },
+  "pages.projects.commit.rapid_diffs": {
+    "feature_flag": "vue3_migrate_commit_list"
+  },
+  "pages.projects.commit.show": {
+    "feature_flag": "vue3_migrate_commit_list"
+  },
+  "pages.projects.commits.show": {
+    "feature_flag": "vue3_migrate_commit_list"
+  },
+  "pages.projects.compare.index": {
+    "feature_flag": "vue3_migrate_repo_read_pages"
+  },
+  "pages.projects.compare.show": {
+    "feature_flag": "vue3_migrate_commit_list"
+  },
+  "pages.projects.cycle_analytics.show": {
+    "feature_flag": "vue3_migrate_value_stream_analytics"
+  },
+  "pages.projects.deployments.show": {
+    "feature_flag": "vue3_migrate_deployments"
+  },
+  "pages.projects.edit": {
+    "feature_flag": "vue3_migrate_project"
+  },
+  "pages.projects.environments.edit": {
+    "feature_flag": "vue3_migrate_environments"
+  },
+  "pages.projects.environments.folder": {
+    "feature_flag": "vue3_migrate_environments"
+  },
+  "pages.projects.environments.index": {
+    "feature_flag": "vue3_migrate_environments"
+  },
+  "pages.projects.environments.k8s": {
+    "feature_flag": "vue3_migrate_environments"
+  },
+  "pages.projects.environments.new": {
+    "feature_flag": "vue3_migrate_environments"
+  },
+  "pages.projects.environments.show": {
+    "feature_flag": "vue3_migrate_environments"
+  },
+  "pages.projects.feature_flags_user_lists.edit": {
+    "feature_flag": "vue3_migrate_feature_flags"
+  },
+  "pages.projects.feature_flags_user_lists.index": {
+    "feature_flag": "vue3_migrate_feature_flags"
+  },
+  "pages.projects.feature_flags_user_lists.new": {
+    "feature_flag": "vue3_migrate_feature_flags"
+  },
+  "pages.projects.feature_flags_user_lists.show": {
+    "feature_flag": "vue3_migrate_feature_flags"
+  },
+  "pages.projects.feature_flags.edit": {
+    "feature_flag": "vue3_migrate_feature_flags"
+  },
+  "pages.projects.feature_flags.index": {
+    "feature_flag": "vue3_migrate_feature_flags"
+  },
+  "pages.projects.feature_flags.new": {
+    "feature_flag": "vue3_migrate_feature_flags"
+  },
+  "pages.projects.find_file.show": {
+    "feature_flag": "vue3_migrate_repo_read_pages"
+  },
+  "pages.projects.forks.new": {
+    "feature_flag": "vue3_migrate_repo_read_pages"
+  },
+  "pages.projects.google_cloud.configuration": {
+    "feature_flag": "vue3_migrate_google_cloud"
+  },
+  "pages.projects.google_cloud.databases.index": {
+    "feature_flag": "vue3_migrate_google_cloud"
+  },
+  "pages.projects.google_cloud.databases.new": {
+    "feature_flag": "vue3_migrate_google_cloud"
+  },
+  "pages.projects.google_cloud.deployments": {
+    "feature_flag": "vue3_migrate_google_cloud"
+  },
+  "pages.projects.google_cloud.gcp_regions": {
+    "feature_flag": "vue3_migrate_google_cloud"
+  },
+  "pages.projects.google_cloud.service_accounts": {
+    "feature_flag": "vue3_migrate_google_cloud"
+  },
+  "pages.projects.graphs.charts": {
+    "feature_flag": "vue3_migrate_repository_analytics"
+  },
+  "pages.projects.graphs.show": {
+    "feature_flag": "vue3_migrate_contributor_analytics"
+  },
+  "pages.projects.hooks": {
+    "feature_flag": "vue3_migrate_webhooks"
+  },
+  "pages.projects.import.jira": {
+    "feature_flag": "vue3_migrate_jira"
+  },
+  "pages.projects.imports.new": {
+    "feature_flag": "vue3_migrate_import_by_url"
+  },
+  "pages.projects.imports.show": {
+    "feature_flag": "vue3_migrate_import_by_url"
+  },
+  "pages.projects.issues.service_desk": {
+    "feature_flag": "vue3_migrate_work_items"
+  },
+  "pages.projects.issues.show": {
+    "feature_flag": "vue3_migrate_work_items"
+  },
+  "pages.projects.jobs.index": {
+    "feature_flag": "vue3_migrate_jobs"
+  },
+  "pages.projects.jobs.show": {
+    "feature_flag": "vue3_migrate_jobs"
+  },
+  "pages.projects.jobs.terminal": {
+    "feature_flag": "vue3_migrate_jobs"
+  },
+  "pages.projects.jobs.viewer": {
+    "feature_flag": "vue3_migrate_jobs"
+  },
+  "pages.projects.labels.edit": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.projects.labels.index": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.projects.labels.new": {
+    "feature_flag": "vue3_migrate_labels"
+  },
+  "pages.projects.merge_requests.conflicts": {
+    "feature_flag": "vue3_migrate_mr_conflicts"
+  },
+  "pages.projects.merge_requests.edit": {
+    "feature_flag": "vue3_migrate_mr_edit"
+  },
+  "pages.projects.merge_requests.index": {
+    "feature_flag": "vue3_migrate_mr_list"
+  },
+  "pages.projects.milestones.edit": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.projects.milestones.index": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.projects.milestones.new": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.projects.milestones.show": {
+    "feature_flag": "vue3_migrate_milestones"
+  },
+  "pages.projects.network.show": {
+    "feature_flag": "vue3_migrate_repo_read_pages"
+  },
+  "pages.projects.new": {
+    "feature_flag": "vue3_migrate_project"
+  },
+  "pages.projects.pages": {
+    "feature_flag": "vue3_migrate_pages"
+  },
+  "pages.projects.pages_domains.new": {
+    "feature_flag": "vue3_migrate_pages"
+  },
+  "pages.projects.pages_domains.show": {
+    "feature_flag": "vue3_migrate_pages"
+  },
+  "pages.projects.pages.new": {
+    "feature_flag": "vue3_migrate_pages"
+  },
+  "pages.projects.pages.show": {
+    "feature_flag": "vue3_migrate_pages"
+  },
+  "pages.projects.pipeline_schedules.edit": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipeline_schedules.index": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipeline_schedules.new": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipelines.builds": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipelines.charts": {
+    "feature_flag": "vue3_migrate_ci_cd_analytics"
+  },
+  "pages.projects.pipelines.failures": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipelines.index": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipelines.manual_variables": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipelines.new": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipelines.show": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.pipelines.test_report": {
+    "feature_flag": "vue3_migrate_pipelines"
+  },
+  "pages.projects.project_members": {
+    "feature_flag": "vue3_migrate_project"
+  },
+  "pages.projects.releases.edit": {
+    "feature_flag": "vue3_migrate_releases"
+  },
+  "pages.projects.releases.index": {
+    "feature_flag": "vue3_migrate_releases"
+  },
+  "pages.projects.releases.new": {
+    "feature_flag": "vue3_migrate_releases"
+  },
+  "pages.projects.releases.show": {
+    "feature_flag": "vue3_migrate_releases"
+  },
+  "pages.projects.runners.edit": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.projects.runners.new": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.projects.runners.register": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.projects.runners.show": {
+    "feature_flag": "vue3_migrate_admin_runners"
+  },
+  "pages.projects.saved_views.show": {
+    "feature_flag": "vue3_migrate_work_items"
+  },
+  "pages.projects.settings.branch_rules": {
+    "feature_flag": "vue3_migrate_repo_settings"
+  },
+  "pages.projects.settings.integrations.edit": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.projects.settings.integrations.index": {
+    "feature_flag": "vue3_migrate_integrations"
+  },
+  "pages.projects.settings.repository.show": {
+    "feature_flag": "vue3_migrate_repo_settings"
+  },
+  "pages.projects.show": {
+    "feature_flag": "vue3_migrate_project_overview"
+  },
+  "pages.projects.snippets.edit": {
+    "feature_flag": "vue3_migrate_snippets"
+  },
+  "pages.projects.snippets.new": {
+    "feature_flag": "vue3_migrate_snippets"
+  },
+  "pages.projects.snippets.show": {
+    "feature_flag": "vue3_migrate_snippets"
+  },
+  "pages.projects.tags.index": {
+    "feature_flag": "vue3_migrate_refs_management"
+  },
+  "pages.projects.tags.new": {
+    "feature_flag": "vue3_migrate_refs_management"
+  },
+  "pages.projects.tags.show": {
+    "feature_flag": "vue3_migrate_refs_management"
+  },
+  "pages.projects.terraform.index": {
+    "feature_flag": "vue3_migrate_terraform"
+  },
+  "pages.projects.tree.show": {
+    "feature_flag": "vue3_migrate_project_overview"
+  },
+  "pages.projects.wikis": {
+    "feature_flag": "vue3_migrate_wiki"
+  },
+  "pages.projects.wikis.diff": {
+    "feature_flag": "vue3_migrate_wiki"
+  },
+  "pages.projects.wikis.history": {
+    "feature_flag": "vue3_migrate_wiki"
+  },
+  "pages.projects.wikis.pages": {
+    "feature_flag": "vue3_migrate_wiki"
+  },
+  "pages.projects.wikis.show": {
+    "feature_flag": "vue3_migrate_wiki"
+  },
+  "pages.projects.work_items": {
+    "feature_flag": "vue3_migrate_work_items"
+  },
+  "pages.root": {
+    "feature_flag": "vue3_migrate_dashboard_explore_pages"
+  },
+  "pages.search.show": {
+    "feature_flag": "vue3_migrate_global_search"
+  },
+  "pages.snippets.edit": {
+    "feature_flag": "vue3_migrate_snippets"
+  },
+  "pages.snippets.new": {
+    "feature_flag": "vue3_migrate_snippets"
+  },
+  "pages.snippets.show": {
+    "feature_flag": "vue3_migrate_snippets"
+  },
+  "pages.time_tracking.timelogs": {
+    "feature_flag": "vue3_migrate_profile_time_tracking"
+  },
+  "performance_bar": {
+    "feature_flag": "vue3_migrate_performance_bar"
+  },
+  "super_sidebar": {
+    "feature_flag": "vue3_migrate_super_sidebar"
+  }
+}
